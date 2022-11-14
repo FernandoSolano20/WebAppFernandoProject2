@@ -1,0 +1,10 @@
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\bin\Release\Excepciones.dll
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\bin\Release\Excepciones.pdb
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\bin\Release\DataAccess.dll
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\bin\Release\Entities_POJO.dll
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\bin\Release\DataAccess.pdb
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\bin\Release\Entities_POJO.pdb
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\obj\Release\Excepciones.csprojAssemblyReference.cache
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\obj\Release\Excepciones.csproj.CopyComplete
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\obj\Release\Excepciones.dll
+C:\Users\fersolano\Desktop\Proyecto2\Web_App\Fernando\Excepciones\obj\Release\Excepciones.pdb

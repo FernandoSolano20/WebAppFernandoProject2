@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0CE12D51-CE41-49CD-B298-48B56BC0B607}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web_App</RootNamespace>
+    <AssemblyName>Web_App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44306</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.6</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCode\Helper\JsonHelper.cs" />
+    <Compile Include="AppCode\Helper\Language\Language.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AppCode\UserSession.cs" />
+    <Compile Include="Configs\Resource\Res.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Res.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Administrador\AdministradorController.cs" />
+    <Compile Include="Controllers\CambiarContrasenna\CambiarContrasennaController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\Configuracion\ConfiguracionController.cs" />
+    <Compile Include="Controllers\Documento\DocumentoController.cs" />
+    <Compile Include="Controllers\Empresa\EmpresaController.cs" />
+    <Compile Include="Controllers\Bitacora\BitacoraController.cs" />
+    <Compile Include="Controllers\Especialidad\EspecialidadController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Language\LanguageController.cs" />
+    <Compile Include="Controllers\Membresía\MembresiaController.cs" />
+    <Compile Include="Controllers\OferenteFisico\OferenteFisicoController.cs" />
+    <Compile Include="Controllers\OferenteJuridico\OferenteJuridicoController.cs" />
+    <Compile Include="Controllers\Ofertas\OfertaController.cs" />
+    <Compile Include="Controllers\Reportes\DashboardAdministradorController.cs" />
+    <Compile Include="Controllers\RolController\RolController.cs" />
+    <Compile Include="Controllers\Solicitud\SolicitudController.cs" />
+    <Compile Include="Controllers\TipoTrabajo\TipoTrabajoController.cs" />
+    <Compile Include="Controllers\Usuario\UsuarioController.cs" />
+    <Compile Include="Controllers\TerminosServicio\TerminosServicioController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Controls\CtrlBaseModel.cs" />
+    <Compile Include="Models\Controls\CtrlButtonModel.cs" />
+    <Compile Include="Models\Controls\CtrlChartModel.cs" />
+    <Compile Include="Models\Controls\CtrlDropDownModel.cs" />
+    <Compile Include="Models\Controls\CtrlInputFormModel.cs" />
+    <Compile Include="Models\Controls\CtrlInputModel.cs" />
+    <Compile Include="Models\Controls\CtrlInputLabelModel.cs" />
+    <Compile Include="Models\Controls\CtrlModalFormModel.cs" />
+    <Compile Include="Models\Controls\CtrlModalMessageModel.cs" />
+    <Compile Include="Models\Controls\CtrlTableModel.cs" />
+    <Compile Include="Models\Helpers\ControlExtensions.cs" />
+    <Compile Include="Models\SolicitudCalendar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4\Language.Helper.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\addons\datatables-select.min.css" />
+    <Content Include="Content\addons\datatables.min.css" />
+    <Content Include="Content\addons\directives.min.css" />
+    <Content Include="Content\addons\flag.min.css" />
+    <Content Include="Content\addons\jquery.zmd.hierarchical-display.min.css" />
+    <Content Include="Content\addons\rating.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\grupo.css" />
+    <Content Include="Content\img\andres.jpeg" />
+    <Content Include="Content\img\atlantis.jpg" />
+    <Content Include="Content\img\background.png" />
+    <Content Include="Content\img\background2.png" />
+    <Content Include="Content\img\background3.png" />
+    <Content Include="Content\img\bootstrap2.png" />
+    <Content Include="Content\img\cook.jpg" />
+    <Content Include="Content\img\desk.png" />
+    <Content Include="Content\img\developer1.jfif" />
+    <Content Include="Content\img\developer2.jfif" />
+    <Content Include="Content\img\developer3.jfif" />
+    <Content Include="Content\img\drawing.jpg" />
+    <Content Include="Content\img\fernando.jpg" />
+    <Content Include="Content\img\jorge.jpeg" />
+    <Content Include="Content\img\julissa.jpeg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logoProducto.png" />
+    <Content Include="Content\img\mac.png" />
+    <Content Include="Content\img\membership1.jpg" />
+    <Content Include="Content\img\membership2.jpg" />
+    <Content Include="Content\img\student.jpg" />
+    <Content Include="Content\img\svg\arrow_left.svg" />
+    <Content Include="Content\img\svg\arrow_right.svg" />
+    <Content Include="Content\img\svg\flags.png" />
+    <Content Include="Content\img\team1.png" />
+    <Content Include="Content\img\team2.png" />
+    <Content Include="Content\img\team3.png" />
+    <Content Include="Content\img\w3newbie.png" />
+    <Content Include="Content\img\woman.jpg" />
+    <Content Include="Content\img\wood1.jpg" />
+    <Content Include="Content\landing.min.css" />
+    <Content Include="Content\compiled-4.14.1.min.css" />
+    <Content Include="Content\mdb.css" />
+    <Content Include="Content\mdb.lite.css" />
+    <Content Include="Content\mdb.lite.min.css" />
+    <Content Include="Content\mdb.min.css" />
+    <Content Include="Content\modules\animations-extended.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\addons\datatables-select.min.css.map" />
+    <Content Include="Content\addons\datatables.min.css.map" />
+    <Content Include="Content\addons\directives.min.css.map" />
+    <Content Include="Content\addons\flag.min.css.map" />
+    <Content Include="Content\addons\jquery.zmd.hierarchical-display.min.css.map" />
+    <Content Include="Content\addons\rating.min.css.map" />
+    <Content Include="Content\modules\animations-extended.min.css.map" />
+    <Content Include="Content\mdb.lite.min.css.map" />
+    <Content Include="Content\mdb.min.css.map" />
+    <Content Include="Models\Controls\CtrlButtonModel.html" />
+    <Content Include="Models\Controls\CtrlChartModel.html" />
+    <Content Include="Models\Controls\CtrlDropDownModel.html" />
+    <Content Include="Models\Controls\CtrlInputFormModel.html" />
+    <Content Include="Models\Controls\CtrlInputModel.html" />
+    <Content Include="Models\Controls\CtrlInputLabelModel.html" />
+    <Content Include="Models\Controls\CtrlTableModel.html" />
+    <Content Include="Models\Controls\CtrlModalFormModel.html" />
+    <Content Include="Models\Controls\CtrlModalMessageModel.html" />
+    <Content Include="Scripts\addons\datatables-select.min.js" />
+    <Content Include="Scripts\addons\datatables.min.js" />
+    <Content Include="Scripts\addons\directives.min.js" />
+    <Content Include="Scripts\addons\flag.min.js" />
+    <Content Include="Scripts\addons\imagesloaded.pkgd.min.js" />
+    <Content Include="Scripts\addons\jquery.zmd.hierarchical-display.min.js" />
+    <Content Include="Scripts\addons\masonry.pkgd.min.js" />
+    <Content Include="Scripts\addons\rating.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\compiled.0.min.js" />
+    <Content Include="Scripts\compiled.1022.min.js" />
+    <Content Include="Scripts\compiled.min.js" />
+    <Content Include="Scripts\footer-functions.js" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\main.css" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\main.min.css" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\google-calendar.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\google-calendar.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales-all.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales-all.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\af.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ar-dz.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ar-kw.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ar-ly.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ar-ma.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ar-sa.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ar-tn.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ar.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\bg.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\bs.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ca.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\cs.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\da.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\de.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\el.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\en-au.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\en-gb.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\en-nz.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\es-us.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\es.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\et.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\eu.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\fa.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\fi.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\fr-ca.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\fr-ch.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\fr.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\gl.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\he.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\hi.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\hr.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\hu.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\id.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\is.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\it.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ja.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ka.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\kk.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ko.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\lb.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\lt.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\lv.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\mk.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ms.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\nb.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\nl.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\nn.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\pl.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\pt-br.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\pt.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ro.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\ru.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\sk.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\sl.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\sq.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\sr-cyrl.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\sr.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\sv.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\th.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\tr.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\uk.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\vi.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\zh-cn.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\locales\zh-tw.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\luxon.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\luxon.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\moment-timezone.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\moment-timezone.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\moment.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\moment.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\rrule.js" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\rrule.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales-all.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales-all.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\af.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ar-dz.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ar-kw.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ar-ly.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ar-ma.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ar-sa.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ar-tn.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ar.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\az.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\bg.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\bs.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ca.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\cs.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\da.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\de.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\el.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\en-au.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\en-gb.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\en-nz.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\es-us.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\es.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\et.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\eu.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\fa.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\fi.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\fr-ca.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\fr-ch.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\fr.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\gl.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\he.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\hi.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\hr.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\hu.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\id.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\is.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\it.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ja.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ka.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\kk.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ko.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\lb.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\lt.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\lv.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\mk.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ms.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\nb.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\nl.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\nn.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\pl.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\pt-br.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\pt.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ro.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ru.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\sk.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\sl.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\sq.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\sr-cyrl.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\sr.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\sv.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\th.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\tr.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\ug.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\uk.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\uz.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\vi.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\zh-cn.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\locales\zh-tw.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\main.css" />
+    <Content Include="Scripts\fullcalendar\packages\core\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\core\main.min.css" />
+    <Content Include="Scripts\fullcalendar\packages\core\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\main.css" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\main.min.css" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\google-calendar\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\google-calendar\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\google-calendar\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\google-calendar\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\interaction\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\interaction\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\interaction\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\interaction\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\list\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\list\main.css" />
+    <Content Include="Scripts\fullcalendar\packages\list\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\list\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\list\main.min.css" />
+    <Content Include="Scripts\fullcalendar\packages\list\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\luxon\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\luxon\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\luxon\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\luxon\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\moment-timezone\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\moment-timezone\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\moment-timezone\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\moment-timezone\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\moment\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\moment\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\moment\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\moment\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\rrule\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\rrule\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\rrule\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\rrule\main.min.js" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\LICENSE.txt" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\main.css" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\main.esm.js" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\main.js" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\main.min.css" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\main.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\mdb.js" />
+    <Content Include="Scripts\mdb.min.js" />
+    <Content Include="Scripts\modules\animations-extended.min.js" />
+    <Content Include="Scripts\modules\forms-free.min.js" />
+    <Content Include="Scripts\modules\scrolling-navbar.min.js" />
+    <Content Include="Scripts\modules\treeview.min.js" />
+    <Content Include="Scripts\modules\wow.min.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Views\Administrador\Editarjs.js" />
+    <Content Include="Scripts\Views\Administrador\OferentesPendientes.js" />
+    <Content Include="Scripts\logout.js" />
+    <Content Include="Scripts\Views\Administrador\Registrar.js" />
+    <Content Include="Scripts\Views\Administrador\validacion.js" />
+    <Content Include="Scripts\Views\Administrador\validarEditar.js" />
+    <Content Include="Scripts\Views\CambiarContrasenna\CambiarContrasenna.js" />
+    <Content Include="Scripts\Views\Cliente\validacion.js" />
+    <Content Include="Scripts\Views\EspecialidadTrabajador\vEspecialidadTrabajador.js" />
+    <Content Include="Scripts\Views\Dashboards\vDashboardAdministrador.js" />
+    <Content Include="Scripts\Views\Especialidad\vEspecialidad.js" />
+    <Content Include="Scripts\Views\Oferta\vDetallesOferta\vDetallesOferta.js" />
+    <Content Include="Scripts\Views\OfrerenteFisico\Solicitud\Solicitud.js" />
+    <Content Include="Scripts\Views\OfrerenteJuridico\AgregarTrabajadores\AgregarTrabajadores.js" />
+    <Content Include="Scripts\Views\OfrerenteJuridico\RegistrarTrabajador\Registrar.js" />
+    <Content Include="Scripts\Views\OfrerenteJuridico\RegistrarTrabajador\validacion.js" />
+    <Content Include="Scripts\Views\Rol\vRol.js" />
+    <Content Include="Scripts\Services\Helper\Prototypes.js" />
+    <Content Include="Scripts\Services\Map\map.js" />
+    <Content Include="Scripts\Services\Mask\mask.js" />
+    <Content Include="Scripts\Services\PayPal\PayPalService.js" />
+    <Content Include="Scripts\Services\SelectAjax\selectComponent.js" />
+    <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Scripts\Validacion\ValidacionesGenerales.js" />
+    <Content Include="Scripts\validate.min.js" />
+    <Content Include="Scripts\Views\Documento\CloudinaryUploader.js" />
+    <Content Include="Scripts\Views\Documento\vDocumento.js" />
+    <Content Include="Scripts\Views\Empresa\Registrar\Registrar.js" />
+    <Content Include="Scripts\Views\Form\SelectLocalizacion.js" />
+    <Content Include="Scripts\Views\Form\ValidateForm.js" />
+    <Content Include="Scripts\Views\Cliente\Registrar.js" />
+    <Content Include="Scripts\Views\Login\Login.js" />
+    <Content Include="Scripts\Views\Membresia\vMembresia.js" />
+    <Content Include="Scripts\Views\OfrerenteFisico\Registrar\Registrar.js" />
+    <Content Include="Scripts\Views\OfrerenteFisico\Registrar\validacion.js" />
+    <Content Include="Scripts\Views\OfrerenteJuridico\Registrar\Registrar.js" />
+    <Content Include="Scripts\Views\OfrerenteJuridico\Registrar\validacion.js" />
+    <Content Include="Scripts\Views\Solicitud\CalificarSolicitud\vCalificarTrabajo.js" />
+    <Content Include="Scripts\Views\Solicitud\vEditarSolicitud\ValidacionesEditar.js" />
+    <Content Include="Scripts\Views\Solicitud\vEditarSolicitud\vEditarSolicitud.js" />
+    <Content Include="Scripts\Views\Solicitud\vFinalizarSolicitud\AgregarFotografias\CloudinaryUploader.js" />
+    <Content Include="Scripts\Views\Solicitud\vFinalizarSolicitud\AgregarFotografias\vAgregarFotografias.js" />
+    <Content Include="Scripts\Views\Solicitud\vFinalizarSolicitud\AgregarDetalles\vFinalizarTrabajoDetalles.js" />
+    <Content Include="Scripts\Views\Solicitud\vFinalizarSolicitud\HorasTrabajadas\vHorasTrabajadas.js" />
+    <Content Include="Scripts\Views\Solicitud\vFinalizarSolicitud\PagoSolicitud\vPagoSolicitud.js" />
+    <Content Include="Scripts\Views\Solicitud\vGenerarSolicitud\CloudinaryUploader.js" />
+    <Content Include="Scripts\Views\Solicitud\vGenerarSolicitud\Validaciones.js" />
+    <Content Include="Scripts\Views\Solicitud\vGenerarSolicitud\vGenerarSolicitud.js" />
+    <Content Include="Scripts\Views\Solicitud\vGenerarSolicitud\vGenerarSolicitudAdicionales.js" />
+    <Content Include="Scripts\Views\Solicitud\vIniciarTrabajo\AccionTrabajo.js" />
+    <Content Include="Scripts\Views\Solicitud\vListarSolicitudes\vListarSolicitudes.js" />
+    <Content Include="Scripts\Views\Oferta\vVisualizarOfertas\vVisualizarOfertas.js" />
+    <Content Include="Scripts\Views\TerminosServicio\vTerminosServicio.js" />
+    <Content Include="Scripts\Views\TrabajosXProvJuridico\vTrabajosXProvJuridico.js" />
+    <Content Include="Scripts\Views\Usuario\Cliente\FormCliente.js" />
+    <Content Include="Scripts\Views\Bitacora\vBitacora.js" />
+    <Content Include="Scripts\Views\Usuario\Listar\Listar.js" />
+    <Content Include="Scripts\Views\TerminosServicio\vTerminosServicio.js" />
+    <Content Include="T4\Language.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Language.Helper.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\Views\ControlActions.js" />
+    <Content Include="Scripts\Views\TipoTrabajo\vTipoTrabajo.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Language\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\mdb.lite.min.js.map" />
+    <Content Include="Scripts\mdb.min.js.map" />
+    <Content Include="Scripts\addons\datatables-select.min.js.map" />
+    <Content Include="Scripts\addons\datatables.min.js.map" />
+    <Content Include="Scripts\addons\directives.min.js.map" />
+    <Content Include="Scripts\addons\flag.min.js.map" />
+    <Content Include="Scripts\addons\imagesloaded.pkgd.min.js.map" />
+    <Content Include="Scripts\addons\jquery.zmd.hierarchical-display.min.js.map" />
+    <Content Include="Scripts\addons\masonry.pkgd.min.js.map" />
+    <Content Include="Scripts\addons\rating.min.js.map" />
+    <Content Include="Scripts\modules\animations-extended.min.js.map" />
+    <Content Include="Scripts\modules\forms-free.min.js.map" />
+    <Content Include="Scripts\modules\scrolling-navbar.min.js.map" />
+    <Content Include="Scripts\modules\treeview.min.js.map" />
+    <Content Include="Scripts\modules\wow.min.js.map" />
+    <Content Include="Views\MntTipoTrabajo\vMntTipoTrabajo.cshtml" />
+    <Content Include="Views\Cliente\Registrar.cshtml" />
+    <Content Include="Views\OferenteFisico\Registrar.cshtml" />
+    <Content Include="Views\Empresa\Registrar.cshtml" />
+    <Content Include="Views\Home\LandingPage.cshtml" />
+    <Content Include="Views\Bitacora\vBitacora.cshtml" />
+    <Content Include="Views\Documento\vDocumentoJuridico.cshtml" />
+    <Content Include="Views\OferenteJuridico\Registrar.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\TerminosServicio\vTerminosServicio.cshtml" />
+    <Content Include="Views\TipoTrabajo\vTipoTrabajo.cshtml" />
+    <Content Include="Views\Usuario\Listar.cshtml" />
+    <Content Include="Views\Rol\vRol.cshtml" />
+    <Content Include="Views\TipoTrabajo\vTipoTrabajo.cshtml" />
+    <Content Include="Views\TerminosServicio\vTerminosServicio.cshtml" />
+    <Content Include="Views\TrabajosXProvJuridico\vTrabajosXProvJuridico.cshtml" />
+    <Content Include="Views\Membresia\vMembresiaFisico.cshtml" />
+    <Content Include="Views\Configuracion\vConfiguracionFisico.cshtml" />
+    <Content Include="Views\Shared\_LayoutProveedorFisico.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdministrador.cshtml" />
+    <Content Include="Views\Membresia\vMembresiaJuridico.cshtml" />
+    <Content Include="Views\Administrador\OferentesPendientes.cshtml" />
+    <Content Include="Views\Administrador\Registrar.cshtml" />
+    <Content Include="Views\Administrador\Editar.cshtml" />
+    <Content Include="Views\CambiarContrasenna\CambiarContrasenna.cshtml" />
+    <Content Include="Views\EspecialidadTrabajador\vEspecialidadTrabajador.cshtml" />
+    <Content Include="Views\Administrador\vDashboardAdministrador.cshtml" />
+    <Content Include="Views\Especialidad\vEspecialidad.cshtml" />
+    <Content Include="Views\Shared\_LayoutProveedorJuridico.cshtml" />
+    <Content Include="Views\OferenteFisico\vDashboardOferenteFisico.cshtml" />
+    <Content Include="Views\OferenteJuridico\vDashboardOferenteJuridico.cshtml" />
+    <Content Include="Views\Configuracion\vConfiguracionJuridico.cshtml" />
+    <Content Include="Views\Documento\vDocumentoFisico.cshtml" />
+    <Content Include="Views\Home\LandingGrupo.cshtml" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\bootstrap\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\google-calendar.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\luxon.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\moment-timezone.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\moment.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\bundle\rrule.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\core\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\core\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\core\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\daygrid\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\google-calendar\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\google-calendar\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\google-calendar\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\interaction\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\interaction\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\interaction\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\list\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\list\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\list\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\luxon\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\luxon\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\luxon\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\moment-timezone\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\moment-timezone\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\moment-timezone\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\moment\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\moment\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\moment\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\rrule\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\rrule\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\rrule\README.md" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\main.js.map" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\package.json" />
+    <Content Include="Scripts\fullcalendar\packages\timegrid\README.md" />
+    <Content Include="Views\Solicitud\vGenerarSolicitud.cshtml" />
+    <Content Include="Views\Solicitud\vGenerarSolicitudAdicionales.cshtml" />
+    <Content Include="Views\Solicitud\vListarSolicitudes.cshtml" />
+    <Content Include="Views\OferenteFisico\Solicitudes.cshtml" />
+    <Content Include="Views\Solicitud\vEditarSolicitud.cshtml" />
+    <Content Include="Views\Solicitud\vIniciarTrabajo.cshtml" />
+    <Content Include="Views\Oferta\vVisualizarOfertas.cshtml" />
+    <Content Include="Views\Oferta\vDetallesOferta.cshtml" />
+    <Content Include="Views\Solicitud\vFinalizarTrabajoDetalles.cshtml" />
+    <Content Include="Views\Solicitud\vAgregarFotografias.cshtml" />
+    <Content Include="Views\Solicitud\vHorasTrabajadas.cshtml" />
+    <Content Include="Views\OferenteJuridico\AgregarTrabajadores.cshtml" />
+    <Content Include="Views\OferenteJuridico\Solicitudes.cshtml" />
+    <Content Include="Views\Solicitud\vPagoSolicitud.cshtml" />
+    <Content Include="Views\Solicitud\vCalificarTrabajo.cshtml" />
+    <Content Include="Views\Shared\_LayoutCliente.cshtml" />
+    <Content Include="Views\OferenteJuridico\RegistrarTrabajador.cshtml" />
+    <Content Include="Views\Cliente\Dashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configs\Resource\Res.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configs\Resource\Res.es.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configs\Resource\Res.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Res.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities_POJO\Entities_POJO.csproj">
+      <Project>{47D99CEC-4ED8-4F68-A0FA-01E0531A4037}</Project>
+      <Name>Entities_POJO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\fullcalendar\packages\core\main.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60632</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44306/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

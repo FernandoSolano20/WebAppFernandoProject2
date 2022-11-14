@@ -1,0 +1,209 @@
+﻿@using Web_App.AppCode.Helper.Language
+@using WebApp.Helpers
+
+@{
+    Layout = "~/Views/Shared/_LayoutCliente.cshtml";
+}
+
+<script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+<style>
+    .form-check {
+        display: inline-block;
+    }
+
+    .card {
+        min-height: 82vh;
+    }
+
+    .form-group {
+        margin: 0 0;
+    }
+
+    .md-form {
+        margin: 16px 0;
+    }
+
+    .help-block.error {
+        margin-bottom: 5px;
+    }
+
+    .has-error label {
+        color: #ff3547 !important;
+    }
+
+    .has-error input.form-control {
+        border-bottom-color: #ff3547 !important;
+    }
+</style>
+
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class=" brand-font pt-4">@LanguageHelper.IniciarSolicitudTrabajo</h1>
+        </div>
+        <hr>
+
+        <div class="col-12">
+            <p class="lead">@LanguageHelper.IniciarSolicitudTrabajoDescripcion</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="card col-10 p-0  mt-3">
+
+            <div class="card-body p-0 rounded-lg">
+
+                <div id="main" class="container p-0">
+
+                    <div class="primary-color rounded-top example z-depth-1-half p-3 text-light">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h2 class="h2 data" ColumnDataName="Titulo"></h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <p class="m-0 data" ColumnDataName="Descripcion"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container py-2 px-2 mt-3 text-center">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-4">
+                                <p class="h5"> @LanguageHelper.Provincia</p>
+                                <p class="data" ColumnDataName="Provincia"></p>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-4">
+                                <p class="h5">@LanguageHelper.Canton</p>
+                                <p class="data" ColumnDataName="Canton"></p>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-4">
+                                <p class="h5">@LanguageHelper.Distrito</p>
+                                <p class="data" ColumnDataName="Distrito"></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row py-3  text-center">
+                        <div class="col-12 px-5">
+                            <p class="h5 mb-3">@LanguageHelper.DireccionExacta</p>
+                            <p class="data" ColumnDataName="Direccion"></p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 d-flex justify-content-center">
+                        <div id="map" class="primary-color"></div>
+                    </div>
+
+
+                    <div class="row d-flex justify-content-center py-2">
+                        <div class="col-10">
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="row py-2 px-2 mt-3 text-center d-flex justify-content-center">
+                        <div class="col-sm-12 col-lg-4">
+                            <p class="h5 mb-3">@LanguageHelper.FechaInicioTrabajo</p>
+                            <p class="data" ColumnDataName="FechaInicio"></p>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <p class="h5 mb-3">@LanguageHelper.Presupuesto</p>
+                            <p class="data" ColumnDataName="Presupuesto"></p>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center py-2">
+                        <div class="col-10">
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="row py-2 px-2 mt-3 text-center d-flex justify-content-center">
+                        <div class="col-sm-12 col-lg-4">
+                            <p class="h5 mb-3">@LanguageHelper.NombreEmpresa</p>
+                            <p class="data" ColumnDataName="NombreComercial"></p>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-4">
+                            <p class="h5 mb-3">@LanguageHelper.Trabajadores</p>
+
+                            <!--Contenedor donde se agrega la lista de los trabajadores asignados a la solicitud-->
+                            <div id="listaTrabajadores">
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center  my-3">
+                            <div class="col-12">
+                                <p class="h5">@LanguageHelper.CodigoQR</p>
+                            </div>
+
+                            <div class="col-6 ">
+                                <video class="w-100 h-100" id="preview"></video>
+                            </div>
+                        </div>
+
+                        <div class="row px-5 py-2 text-center grey-text">
+                            <div class="col-12">
+                                <p>@LanguageHelper.SolicitarCodigoQR</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal de solicitud enviada correctamente -->
+    <div class="modal fade" id="modalAccionSolicitud" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">@LanguageHelper.SolicitudTrabajoIniciada</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p>
+                            @LanguageHelper.SolicitudTrabajoIniciadaDescripcion
+                        </p>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-success" href="@Url.Action("vListarSolicitudes", "Solicitud")">@LanguageHelper.Listo</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Medium Success-->
+
+    <script src="~/Scripts/Services/Mask/mask.js"></script>
+
+
+    <script src="~/Scripts/Views/Solicitud/vIniciarTrabajo/AccionTrabajo.js"></script>
+    <script src="~/Scripts/Services/Map/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKXA3_YJlVwwt1lx60eO0ljRVUKQO3fNY" async defer></script>

@@ -1,0 +1,44 @@
+﻿@using Web_App.AppCode.Helper.Language
+@using WebApp.Helpers
+
+@{
+    Layout = "~/Views/Shared/_LayoutCliente.cshtml";
+}
+
+    <script src="~/Scripts/Views/Solicitud/vFinalizarSolicitud/HorasTrabajadas/vHorasTrabajadas.js"></script>
+
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class=" brand-font pt-4">@LanguageHelper.FinalizarSolicitudTrabajo</h1>
+        </div>
+        <hr>
+
+        <div class="col-12">
+            <p class="lead">@LanguageHelper.AgregarHorasTrabajadasDescripcion</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="card col-10 p-0  mt-3">
+
+            <div class="card-body p-0 rounded-lg">
+
+                <div id="main" class="container p-0">
+
+
+                    <div id="listaTrabajadores" class="w-75" style="margin: 0 auto;">
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="text-center pt-3">
+                <button id="btnContinuar" class="btn btn-primary btn-lg">@LanguageHelper.Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>

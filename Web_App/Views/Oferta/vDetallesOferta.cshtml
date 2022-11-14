@@ -1,0 +1,199 @@
+﻿@using Web_App.AppCode.Helper.Language
+@using WebApp.Helpers
+
+@{
+    ViewBag.Title = "Registrar";
+    var viewName = "vDetallesOferta";
+}
+
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class=" brand-font pt-4">@LanguageHelper.DetallesOfertaTrabajo</h1>
+        </div>
+        <hr>
+
+        <div class="col-12">
+            <p class="lead">@LanguageHelper.DetallesOfertaTrabajoDescripcion</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="card col-10 p-0  mt-3">
+
+            <div class="card-body p-0 rounded-lg">
+
+                <div id="main" class="container p-0">
+
+                    <div class="primary-color rounded-top example z-depth-1-half p-3 text-light">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <p class="m-0">@LanguageHelper.OfertaRealizadaPor</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h2 class="h2 data" ColumnDataName="NombreComercial"></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container py-2 px-2 mt-3 text-center w-75">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <p class="h5"> @LanguageHelper.TipoPago</p>
+                                <p class="data" ColumnDataName="TipoCobro"></p>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-6">
+                                <p class="h5">@LanguageHelper.Precio</p>
+                                <p class="data" ColumnDataName="PrecioCliente"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container py-2 px-2 mt-3 text-center  w-75">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <p class="h5"> @LanguageHelper.OfertaRealizadaDurante</p>
+                                <p class="data" ColumnDataName="FormatoFecha"></p>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-6">
+                                <p class="h5">@LanguageHelper.PrecioCancelacion</p>
+                                <p class="data" ColumnDataName="CancelacionCliente"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center py-1">
+                        <div class="col-10">
+                            <hr />
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="container py-2 px-2 mt-3 text-center w-75">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-12 col-lg-4">
+                            <p class="h5 mb-3">@LanguageHelper.Trabajadores</p>
+
+                            <!--Contenedor donde se agrega la lista de los trabajadores asignados a la solicitud-->
+                            <div id="listaTrabajadores">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div id="listaTrabajadores" class="container px-2 mt-1 text-center w-75">
+
+                    </div>
+
+                    <div class="row d-flex justify-content-center py-2">
+                        <div class="col-10">
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="container py-2 px-2 mt-3 text-center w-50">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <button id="btnAceptarOferta" class="btn btn-success btn-lg">@LanguageHelper.Aceptar</button>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-6">
+                                <button id="btnRechazarOferta" class="btn btn-danger btn-lg">@LanguageHelper.Rechazar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center text-center pt-2">
+                        <div class="col-4">
+                            <a href="@Url.Action("vVisualizarOfertas", "Oferta")" class="text-info">@LanguageHelper.RegresarListaOfertas</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de aceptar solicitud-->
+<div class="modal fade" id="modalAceptarOferta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-success" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">@LanguageHelper.OfertaTrabajoAceptada</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                    <p>
+                        @LanguageHelper.OfertaTrabajoAceptadaDescripcion
+                    </p>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" class="btn btn-success" href="@Url.Action("vListarSolicitudes", "Solicitud")">@LanguageHelper.Listo</a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Central Modal Medium Success-->
+
+<!-- Modal de rechazar oferta -->
+<div class="modal fade" id="modalRechazarSolicitud" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead">@LanguageHelper.RechazarOfertaTrabajo</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="text-center">
+                    <p>
+                        @LanguageHelper.RechazarOfertaTrabajoDescripcion
+                    </p>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <a type="button" id="btnEjecutarRechazo" class="btn btn-danger">@LanguageHelper.Rechazar</a>
+                <a type="button" class="btn btn-light" data-dismiss="modal">@LanguageHelper.Cancelar</a>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Central Modal Medium Success-->
+
+<script src="~/Scripts/Services/Mask/mask.js"></script>
+
+
+<script src="~/Scripts/Views/Oferta/vDetallesOferta/vDetallesOferta.js"></script>

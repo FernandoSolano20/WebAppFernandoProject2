@@ -1,0 +1,242 @@
+﻿@using Web_App.AppCode.Helper.Language;
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bejuco</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="~/Content/grupo.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-color sticky-top">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand"><img class="logo" src="~/Content/img/logo.png" alt="logo"></a>
+
+
+        </div>
+    </nav>
+
+
+    <!--- Image Slider -->
+
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/img/developer2.jfif" alt="background1">
+
+                <div class="carousel-caption">
+                    <h1 class="display-2">Bejuco</h1>
+                    <h3>Código profundo</h3>
+                    <a href="#conocenos" class="btn btn-primary btn-lg">Cono&#769;cenos</a>
+                    <a href="#producto" class="btn btn-primary btn-lg">Productos</a>
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/img/developer1.jfif" alt="background1">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Misión</h1>
+                    <h4>Crear soluciones de software innovadoras, sencillas y modulares para solventar las necesidades empresariales de nuestros clientes.</h4>
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/img/developer3.jfif" alt="background1">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Visión</h1>
+                    <h4>Ser una empresa líder a nivel nacional en el desarrollo de aplicaciones tecnológicas que cumplan con los estándares de calidad esperados por nuestros clientes.</h4>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--- Welcome Section -->
+    <div id="conocenos" class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Grupo Bejuco</h1>
+            </div>
+
+            <hr>
+
+            <div class="col-12">
+                <p class="lead">
+                    Es un equipo de desarrollo de software que ofrece servicios de consultoría y desarrollo de software de clase mundial para aplicaciones móviles, web y en la nube a escala empresarial.
+                    ¡Nos enorgullece crear un entorno que sea beneficioso tanto para nuestros clientes como para nuestros empleados!
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--- Three Column Section -->
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <!-- Start using fontawesome icons -->
+                <i class="fas fa-laptop"></i>
+                <h3>Calidad</h3>
+                <p>La calidad de nuestro trabajo es nuestra carta de presentación. Por ello nos ocupamos por estar constantemente en un proceso de mejora continua en aras de darle al cliente un producto que cumpla con sus expectativas.</p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <!-- Start using fontawesome icons -->
+                <i class="fas fa-users"></i>
+                <h3>Responsabilidad</h3>
+                <p>Cumplir con cada una de las tareas que conforman un proyecto es clave para el éxito del mismo por lo cual, el comprometerse con el cliente a ejecutar lo que se promete en cuanto a: plazo, costo y alcance, forma parte fundamental de nuestros valores.</p>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <!-- Start using fontawesome icons -->
+                <i class="fas fa-shield-alt"></i>
+                <h3>Ética</h3>
+                <p>Realizar nuestro trabajo de forma honrada y honesta, siempre apegándonos a las leyes y normas vigentes para crear confianza, tanto para nuestros clientes externos como para nuestros clientes internos, es decir: nuestro propio equipo.</p>
+            </div>
+        </div>
+
+        <hr class="my-4">
+    </div>
+
+
+    <!--- Meet the team -->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Conoce nuestro equipo</h1>
+            </div>
+
+            <hr>
+
+            <div class="col-12">
+                <p class="lead">El Grupo Bejuco lo conforman los siguientes integrantes</p>
+            </div>
+        </div>
+    </div>
+
+    <!--- Cards -->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/img/andres.jpeg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Andre&#769;s Bonilla</h4>
+                        <p>abonillaa@ucenfotec.ac.cr</p>
+                        <p>+506 8615 1354</p>
+                        <a name="move_here"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/img/fernando.jpg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Fernando Solano</h4>
+                        <p>jgaraym@ucenfotec.ac.cr</p>
+                        <p>+506 8719 5025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/img/jorge.jpeg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Jorge Mata</h4>
+                        <p>jgaraym@ucenfotec.ac.cr</p>
+                        <p>+506 8719 5025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="~/Content/img/julissa.jpeg" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Julissa Garay</h4>
+                        <p>jgaraym@ucenfotec.ac.cr</p>
+                        <p>+506 8688 7670</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+
+    <!--- Two Column Section -->
+    <div id="producto" class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-lg-6">
+                <h2>Productos</h2>
+                <p>Master es una aplicación para establecer la comunicación entre trabajadores de servicios profesionales y clientes.</p>
+                <p>Pueden contar con una gran variedad de provedores en el sistema para sus solcitudes de trabajo.</p>
+                <br>
+                <a href="https://localhost:44306/" class="btn btn-primary btn-lg">Aprende más</a>
+            </div>
+
+            <div class="col-lg-6">
+                <img src="~/Content/img/logoProducto.png" alt="deskimg" class="img-fluid">
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!--- Footer -->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img class="logo" src="~/Content/img/logo.png" alt="">
+                    <hr class="light">
+                    <p>grupobejuco@outlook.com</p>
+                </div>
+
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Lugar</h5>
+                    <hr class="light">
+                    <p>Universidad Cenfotec</p>
+                </div>
+
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Localización</h5>
+                    <hr class="light">
+                    <p>San Pedro, San Jose&#769;</p>
+                </div>
+
+                <div class="col-12">
+                    <hr class="light-100">
+
+                    <h5>&copy; Universidad Cenfotec</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

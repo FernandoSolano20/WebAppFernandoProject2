@@ -1,0 +1,82 @@
+﻿@using Web_App.AppCode.Helper.Language
+@using WebApp.Helpers
+@{
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+    ViewBag.Title = "Editar";
+    var viewName = "Editar";
+}
+
+<!--- Welcome Section -->
+<div class="container-fluid padding">
+    <div class="row welcome text-center">
+        <div class="col-12">
+            <h1 class=" brand-font pt-4">@LanguageHelper.PerfilAdministrador</h1>
+        </div>
+        <hr>
+        <div class="col-12">
+            <p class="lead">@LanguageHelper.EdicionPerfilAdministrador</p>
+        </div>
+    </div>
+</div>
+
+<form class="needs-validation" novalidate id="form-administrador">
+    <div id="main">
+        <div class="form-row">
+
+            @Html.CtrlInputFormModel(viewName, "Nombre", "nombre", "4", "3", "nombre", LanguageHelper.Nombre, "form-control", "text", false, labelClass: "active")
+
+            @Html.CtrlInputFormModel(viewName, "PrimerApellido", "primerApellido", "4", "3", "primer-apellido", LanguageHelper.PrimerApellido, "form-control", "text", true, LanguageHelper.CumpleConElFormato, LanguageHelper.NoCumpleConElFormato, labelClass: "active")
+
+            @Html.CtrlInputFormModel(viewName, "SegundoApellido", "segundoApellido", "4", "3", "segundo-apellido", LanguageHelper.SegundoApellido, "form-control", "text", false, labelClass: "active")
+        </div>
+        <div class="form-row">
+
+            @Html.CtrlDropDown("drpProvincia", "Provincia", "drp-provincia", LanguageHelper.Provincia, false, "4", LanguageHelper.Buscar, string.Empty, LanguageHelper.SeleccioneUnaOpcion, "LST_PROVINCIA", labelClass: "active")
+
+            @Html.CtrlDropDown("drpCanton", "Canton", "drp-canton", LanguageHelper.Canton, true, "4", LanguageHelper.Buscar, "disabled", LanguageHelper.SeleccioneUnaOpcion, labelClass: "active")
+
+            @Html.CtrlDropDown("drpDistrito", "Distrito", "drp-distrito", LanguageHelper.Distrito, true, "4", LanguageHelper.Buscar, "disabled", LanguageHelper.SeleccioneUnaOpcion, labelClass: "active")
+        </div>
+        <div class="form-row">
+
+            @Html.CtrlInputFormModel(viewName, "Direccion", "direccion", "8", "3", "id", LanguageHelper.DireccionExacta, "form-control", "text", true, LanguageHelper.CumpleConElFormato, LanguageHelper.NoCumpleConElFormato, labelClass: "active")
+
+            @Html.CtrlDropDown("drpPais", "PaisNacimiento", "drp-pais", LanguageHelper.PaisDeNacimiento, false, "4", LanguageHelper.Buscar, string.Empty, LanguageHelper.SeleccioneUnaOpcion, "LST_PAISES", labelClass: "active")
+
+        </div>
+
+        <div class="form-row">
+            @Html.CtrlInputLabelModel(viewName, "FechaNacimeinto", "fecha-nacimiento", "fechaNacimiento", "text", LanguageHelper.FechaNacimiento, true, true, LanguageHelper.CumpleConElFormato, LanguageHelper.NoCumpleConElFormato, "col-md-2 mb-3 md-form", "form-control datepicker", LanguageHelper.FechaNacimiento, labelClass: "active")
+
+            @Html.CtrlInputFormModel(viewName, "Telefono", "telefono", "2", "3", "telefono", LanguageHelper.Telefono, "form-control", "text", true, LanguageHelper.CumpleConElFormato, LanguageHelper.NoCumpleConElFormato, dataFormat: "(***) ****-****", dataMask: "(###) ####-####", labelClass: "active")
+
+            @Html.CtrlDropDown("drpGenero", "Genero", "drp-genero", LanguageHelper.Genero, false, "2", LanguageHelper.Buscar, string.Empty, LanguageHelper.SeleccioneUnaOpcion, "LST_GENERO", labelClass: "active")
+
+            @Html.CtrlDropDown("drpMoneda", "Moneda", "drp-moneda", LanguageHelper.MonedaParaUsarEnElSistema, false, "2", LanguageHelper.Buscar, string.Empty, LanguageHelper.SeleccioneUnaOpcion, "LST_MONEDA", labelClass: "active")
+
+            @Html.CtrlDropDown("drpLenguaje", "Lenguaje", "drp-lenguaje", LanguageHelper.LenguajeDelSistema, false, "2", LanguageHelper.Buscar, string.Empty, LanguageHelper.SeleccioneUnaOpcion, "LST_LENGUAJE", labelClass: "active")
+
+        </div>
+
+        <div class="form-row">
+            <div id="floatingPanel">
+                <button id="borrar-marker" type=button class="btn btn-warning">@LanguageHelper.BorrarMarca</button>
+            </div>
+            <div id="map"></div>
+        </div>
+        <button id="oferente-registar" class="btn btn-primary btn-sm" type="submit">@LanguageHelper.Guardar</button>
+    </div>
+</form>
+
+<script src="~/Scripts/underscore-min.js"></script>
+<script src="~/Scripts/moment.min.js"></script>
+<script src="~/Scripts/validate.min.js"></script>
+
+<script src="~/Scripts/Views/Form/SelectLocalizacion.js"></script>
+<script src="~/Scripts/Views/Administrador/Editarjs.js"></script>
+<script src="~/Scripts/Views/Administrador/validarEditar.js"></script>
+<script src="~/Scripts/Services/Mask/mask.js"></script>
+<script src="~/Scripts/Services/Map/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKXA3_YJlVwwt1lx60eO0ljRVUKQO3fNY"
+        async defer></script>
+

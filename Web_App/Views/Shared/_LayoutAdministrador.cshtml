@@ -1,0 +1,149 @@
+﻿@using Web_App.App_Start
+@using Web_App.AppCode.Helper.Language;
+@using WebApp.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASTER</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="~/Content/compiled-4.14.1.min.css">
+    <!-- MDBootstrap Datatables  -->
+    <link href="~/Content/addons/datatables.min.css" rel="stylesheet" />
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="~/Content/style.css">
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="~/Scripts/jquery.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="~/Scripts/compiled.min.js"></script>
+    <script src="~/Scripts/Services/SelectAjax/selectComponent.js"></script>
+    <!-- Control Actions Script -->
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <!-- Data Tables Script-->
+    <script src="~/Scripts/addons/datatables.min.js"></script>
+    <!-- FontAwesome Script-->
+    <script src="https://kit.fontawesome.com/a993a78eb6.js" crossorigin="anonymous"></script>
+    <script src="~/Scripts/Services/Helper/Prototypes.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar elegant-color">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand brand-font" href="@Url.Action("vDashboardAdministrador", "Administrador")">
+                <strong>MASTER</strong>
+            </a>
+
+            <!-- Collapse -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--Left-->
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("vDashboardAdministrador", "Administrador")">
+                            @LanguageHelper.PanelControl
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("vBitacora", "Bitacora")">@LanguageHelper.Bitacora</a>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">@LanguageHelper.Usuarios</a>
+                        <div class="dropdown-menu dropdown-dark" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="@Url.Action("Listar", "Usuario")">@LanguageHelper.ListaUsuarios</a>
+                            <a class="dropdown-item" href="@Url.Action("OferentesPendientes", "Administrador")">@LanguageHelper.AprobacionProveedores</a>
+                            <a class="dropdown-item" href="@Url.Action("Registrar", "Administrador")">@LanguageHelper.RegistrarAdministrador</a>
+                        </div>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">@LanguageHelper.Sistema</a>
+                        <div class="dropdown-menu dropdown-dark" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="@Url.Action("vEspecialidad", "Especialidad")">@LanguageHelper.Especialidades</a>
+                            <a class="dropdown-item" href="@Url.Action("vTipoTrabajo", "TipoTrabajo")">@LanguageHelper.TiposTrabajo</a>
+                            <a class="dropdown-item" href="@Url.Action("vRol", "Rol")">@LanguageHelper.Roles</a>
+                            <a class="dropdown-item" href="@Url.Action("vTerminosServicio", "TerminosServicio")">@LanguageHelper.TerminosServicio</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <!--Right-->
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+
+                    <li class="nav-item avatar dropdown">
+                        <a class="nav-link p-0 dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            @LanguageHelper.Usuario
+                            <i class="fas fa-user"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-dark"
+                             aria-labelledby="navbarDropdownMenuLink-333">
+                            <a class="dropdown-item" href="@Url.Action("Editar", "Administrador")">@LanguageHelper.EditarPerfil</a>
+                            <a class="dropdown-item" data-toggle="modal" data-target="#change-pass">@LanguageHelper.CambiarContrasenna</a>
+                            <a id="cerrar-sesion" class="dropdown-item" href="#">@LanguageHelper.CerrarSesion</a>
+
+                        </div>
+
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+
+
+    <div class="container body-content">
+
+        <div class="alert alert-danger alert-dismissable mt-3" style="display: none;" id="alert_container">
+            <button type="button" class="close" onclick="$('.alert').hide()">×</button>
+            <span id="alert_message"></span>
+        </div>
+
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn elegant-color">
+
+        <!-- Social icons -->
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            © @LanguageHelper.ElaboradoPor:
+            <a href="https://dev.azure.com/grupobejuco/" target="_blank">Grupo Bejuco 2020</a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <script src="~/Scripts/logout.js"></script>
+
+    @Html.CtrlModalForm(viewName: "Cambiar", id: "change-pass", modalFormId: "change-pass-form", title: LanguageHelper.CambiarContrasenna, text: "", inputColumnDataNames: "Password,RepetirContra", inputIds: "contrasenna,repetir-contrasenna", inputTypes: "password,password", inputClasses: ",", inputPlaceholders: ",", inputLabels: LanguageHelper.Contrasenna + "," + LanguageHelper.ConfirmarContrasenna, btnActionId: "btnSave-pass", btnActionType: "success", btnActionText: LanguageHelper.Guardar, btnActionFunction: "ChangePass", btnCancelId: "btnCancel-pass", btnCancelType: "light", btnCancelText: LanguageHelper.Cancelar, btnCancelFunction: "CleanUpdate", inputValues: ",,")
+<script src="~/Scripts/Views/CambiarContrasenna/CambiarContrasenna.js"></script>
+
+</body>
+</html>

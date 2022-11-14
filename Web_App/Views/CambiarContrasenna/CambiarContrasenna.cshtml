@@ -1,0 +1,47 @@
+﻿@using Web_App.AppCode.Helper.Language
+
+@{
+    ViewBag.Title = "CambiarContrasenna";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+
+<div class="col-lg-6 col-md-12 mb-4 container-login">
+    <!-- Material form login -->
+    <div class="card">
+
+        <h5 class="card-header elegant-color white-text text-center py-4">
+            <strong>@LanguageHelper.CambiarContrasenna</strong>
+        </h5>
+
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+
+            <!-- Form -->
+            <form class="text-center" style="color: #757575;" action="#!" id="contra-form">
+
+                <!-- Email -->
+                <div class="md-form">
+                    <input type="password" id="contrasenna" class="form-control">
+                    <label for="contrasenna">@LanguageHelper.Contrasenna</label>
+                </div>
+
+                <!-- Password -->
+                <div class="md-form">
+                    <input type="password" id="repetir-contrasenna" class="form-control">
+                    <label for="repetir-contrasenna">@LanguageHelper.ConfirmarContrasenna</label>
+                </div>
+
+                <!-- Sign in button -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button" id="save">@LanguageHelper.Guardar</button>
+
+            </form>
+            <!-- Form -->
+
+        </div>
+
+    </div>
+    <!-- Material form login -->
+</div>
+
+<script src="~/Scripts/Views/CambiarContrasenna/CambiarContrasenna.js"></script>
